@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>result of survey</title>
+    <style media="screen">
+    main{
+      width: 500px;
+      margin: 0 auto;
+    }
+    table{
+      text-align: left;
+    }
+    .button{
+      background-color: #0B615E;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    p{
+      background-color:green;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    </style>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+    <p>Thanks for submitting this form!
+    <br>You have submitted this form {{request.session.counts}} times now.</p>
+    <h1>Submitted info</h1>
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td>{{request.session.name}}</td>
+      </tr>
+      <tr>
+        <th>Dojo Location:</th>
+        <td>{{request.session.location}}</td>
+      </tr>
+      <tr>
+        <th>Favorite Language:</th>
+        <td>{{request.session.language}}</td>
+      </tr>
+      <tr>
+        <th>Comment:</th>
+        <td>{{request.session.comment}}</td>
+      </tr>
+    </table>
+    <button class="button" onclick="goBack()">Go Back</button>
+  </main>
+  </body>
+</html>

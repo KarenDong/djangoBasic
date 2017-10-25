@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>show ninja</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'color_app/style.css' %}">
+  </head>
+  <body>
+    {% if ninjas == True %}
+    <img src="{% static 'color_app/leonardo.jpg' %}">
+    <img src="{% static 'color_app/michelangelo.jpg' %}">
+    <img src="{% static 'color_app/raphael.jpg' %}">
+    <img src="{% static 'color_app/donatello.jpg' %}">
+    {% endif %}
+    {% if ninjas == False %}
+      {% if color == 'blue' %}
+      <img src="{% static 'color_app/leonardo.jpg' %}">
+      {% elif color == 'orange' %}
+      <img src="{% static 'color_app/michelangelo.jpg' %}">
+      {% elif color == 'red' %}
+      <img src="{% static 'color_app/raphael.jpg' %}">
+      {% elif color == 'purple' %}
+      <img src="{% static 'color_app/donatello.jpg' %}">
+      {% else %}
+      <img src="{% static 'color_app/notapril.jpg' %}">
+      {% endif %}
+    {% endif %}
+  </body>
+</html>
